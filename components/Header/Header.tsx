@@ -1,8 +1,17 @@
+'use client';
+
 import Image from 'next/image';
 import css from './Header.module.css';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/catalog', label: 'Catalog' },
+];
 
 const Header = () => {
+  const pathname = usePathname();
   return (
     <header className={css.header}>
       <Link href="/" aria-label="Home">
@@ -10,16 +19,16 @@ const Header = () => {
       </Link>
       <nav aria-label="Main Navigation">
         <ul className={css.navigation}>
-          <li>
-            <Link className={css.navigationLink} href="/">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link className={css.navigationLink} href="/catalog">
-              Catalog
-            </Link>
-          </li>
+          {navItems.map(({ href, label }) => {
+            const isActive = pathname === href;
+            return (
+              <li key={href}>
+                <Link href={href} className={`${css.navigationLink} ${isActive ? css.active : ''}`}>
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </header>

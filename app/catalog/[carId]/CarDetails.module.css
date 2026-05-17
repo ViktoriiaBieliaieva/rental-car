@@ -1,0 +1,99 @@
+.section {
+  padding-top: 84px;
+  padding-bottom: 176px;
+}
+
+.container {
+  padding: 0 120px;
+  display: flex;
+  gap: 32px;
+}
+
+.leftWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.thumb {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.rightWrapper {
+  background: var(--white);
+  padding: 32px 24px 4px 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 528px;
+}
+
+.car {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.article {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--gray);
+  margin-left: 16px;
+}
+
+.location {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: var(--light-blue);
+  margin-bottom: 32px;
+}
+
+.description {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  margin-bottom: 68px;
+}
+
+.features {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.featuresItems {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.featuresItems:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+.wrapper:not(:last-of-type) {
+  border-bottom: 1px solid var(--gray-light);
+  padding-bottom: 24px;
+}
+
+.wrapper:not(:first-of-type) {
+  margin-top: 24px;
+}

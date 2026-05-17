@@ -1,11 +1,17 @@
 .section {
   padding-top: 436px;
   padding-bottom: 60px;
-  background-image: image-set(url('/HeroBanner.jpg') 1x, url('/HeroBanner2х.jpg') 2x);
+  background-image: url('/HeroBanner.jpg');
   background-repeat: no-repeat;
-  max-width: 1440px;
+  width: 100%;
   background-size: cover;
   background-position: center;
+}
+
+@media (min-resolution: 2x) {
+  .section {
+    background-image: url('../public/HeroBanner2х.jpg');
+  }
 }
 
 .title {
@@ -35,7 +41,7 @@
   padding: 12px 88px;
   width: 276px;
   height: 44px;
-  background: var(--button);
+  background: var(--light-blue);
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 16px;
@@ -46,5 +52,5 @@
 
 .link:hover,
 .link:focus {
-  background: var(--button-hover);
+  background: var(--dark-blue);
 }

@@ -1,5 +1,6 @@
 import { Car } from '@/src/lib/api';
 import CarItem from '../CarItem/CarItem';
+import css from './CarList.module.css';
 
 interface CarListProps {
   cars: Car[];
@@ -7,7 +8,7 @@ interface CarListProps {
 
 const CarList = ({ cars }: CarListProps) => {
   return (
-    <ul>
+    <ul className={css.list}>
       {cars.map(car => (
         <CarItem key={car.id} item={car} />
       ))}
