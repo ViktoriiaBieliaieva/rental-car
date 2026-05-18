@@ -1,5 +1,5 @@
-const Loading = () => {
-  return <p>Завантаження списку автомобілів...</p>;
-};
+import Loader from '@/components/Loader/Loader';
 
-export default Loading;
+export default function Loading() {
+  return <Loader />;
+}

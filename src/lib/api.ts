@@ -60,3 +60,20 @@ export const getFilters = async () => {
   const { data } = await axios.get<getFiltersResponse>('/cars/filters');
   return data;
 };
+
+type rentCarData = {
+  carId: string;
+  name: string;
+  email: string;
+  comment: string;
+};
+
+export const rentCar = async ({
+  carId,
+  name,
+  email,
+  comment,
+}: rentCarData): Promise<{ message: string }> => {
+  const { data } = await axios.post(`/cars/${carId}/booking-requests`, { name, email, comment });
+  return data;
+};
