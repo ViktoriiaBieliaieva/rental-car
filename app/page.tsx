@@ -3,10 +3,10 @@ import css from './page.module.css';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'RentalCar',
+  title: 'RentalCar | Home',
   description: 'Find reliable and budget-friendly rental cars for any journey.',
   openGraph: {
-    title: 'RentalCar',
+    title: 'RentalCar | Home',
     description: 'Find reliable and budget-friendly rental cars for any journey.',
     url: 'https://rental-car-seven-lemon.vercel.app/',
     siteName: 'Rental Car',

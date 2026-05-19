@@ -11,7 +11,7 @@ const CarItem = ({ item }: CarItemProps) => {
   return (
     <li className={css.card}>
       <div className={css.thumb}>
-        <Image src={item.img} alt={item.brand} width={244} height={268}></Image>
+        <Image src={item.img} alt={item.brand} width={244} height={268} loading="eager"></Image>
       </div>
       <div className={css.description}>
         <div className={css.topRaw}>

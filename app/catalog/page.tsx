@@ -4,10 +4,10 @@ import CatalogClient from './Catalog.client';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Catalog',
+  title: 'Rental Car | Catalog',
   description: 'Find reliable and budget-friendly rental cars for any journey.',
   openGraph: {
-    title: 'Catalog',
+    title: 'Rental Car | Catalog',
     description: 'Find reliable and budget-friendly rental cars for any journey.',
     url: 'https://rental-car-seven-lemon.vercel.app/catalog',
     siteName: 'Rental Car',

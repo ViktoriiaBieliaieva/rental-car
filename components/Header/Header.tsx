@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className={css.header}>
       <Link href="/" aria-label="Home">
-        <Image src="/Logo.svg" alt="Logo" width={104} height={16} />
+        <Image src="/Logo.svg" alt="Logo" width={104} height={16} loading="eager" />
       </Link>
       <nav aria-label="Main Navigation">
         <ul className={css.navigation}>

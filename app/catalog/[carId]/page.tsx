@@ -17,10 +17,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { carId } = await params;
   const car = await getSingleCar(carId);
   return {
-    title: `${car.brand} ${car.model}`,
+    title: `Rental Car | ${car.brand} ${car.model}`,
     description: car.description.slice(0, 30),
     openGraph: {
-      title: `${car.brand} ${car.model}`,
+      title: `Rental Car | ${car.brand} ${car.model}`,
       description: car.description.slice(0, 30),
       url: `https://rental-car-seven-lemon.vercel.app/cars/${carId}`,
       siteName: 'Rental Car',
@@ -53,7 +53,7 @@ const CarDetailsClient = async ({ params }: CarDetailsClientProps) => {
       <div className={css.container}>
         <div className={css.leftWrapper}>
           <div className={css.thumb}>
-            <Image src={car.img} alt={car.brand} width={640} height={512}></Image>
+            <Image src={car.img} alt={car.brand} width={640} height={512} loading="eager"></Image>
           </div>
           <RentalForm carId={carId}></RentalForm>
         </div>
