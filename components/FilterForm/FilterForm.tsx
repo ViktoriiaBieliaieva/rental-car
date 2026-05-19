@@ -26,8 +26,6 @@ type PriceOption = {
   label: string;
 };
 
-// const customStyles = ;
-
 const FilterForm = ({ onSubmit, onClear }: FilterFormProps) => {
   const [brand, setBrand] = useState('');
   const [price, setPrice] = useState<number | null>(null);
