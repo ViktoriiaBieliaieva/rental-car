@@ -1,0 +1,110 @@
+.form {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 60px;
+  align-items: end;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+.brandWrapper {
+  width: 204px;
+  margin-bottom: 28px;
+}
+
+.priceWrapper {
+  width: 196px;
+  margin-bottom: 28px;
+}
+
+.mileageWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+}
+
+.button {
+  border-radius: 12px;
+  padding: 12px 51px;
+  width: 156px;
+  height: 44px;
+  background: var(--light-blue);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--white);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover,
+.button:focus {
+  background: var(--dark-blue);
+}
+
+.clearButton {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--gray);
+  background: none;
+  padding: 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputLeft {
+  border-right: 1px solid var(--gray-light);
+  border-radius: 12px 0 0 12px;
+  width: 160px;
+  height: 44px;
+  padding: 12px 24px;
+  background: var(--white);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  border-bottom: transparent;
+  border-left: transparent;
+  border-top: transparent;
+}
+
+.inputRight {
+  border-radius: 0 12px 12px 0;
+  width: 160px;
+  height: 44px;
+  padding: 12px 24px;
+  background: var(--white);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  border: transparent;
+}
+
+.inputLeft::placeholder,
+.inputRight::placeholder {
+  color: var(--main);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.inputLeft:focus,
+.inputRight:focus {
+  outline: transparent;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

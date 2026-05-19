@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export type Car = {
+type Car = {
   id: string;
   year: number;
   brand: string;
@@ -23,27 +23,58 @@ export type Car = {
   stockNumber: number;
 };
 
-export type CarListResponse = {
+type CarListResponse = {
   cars: Car[];
   totalCars: number;
   page: number;
   totalPages: number;
 };
 
-interface getCarsProps {
+type getCarsProps = {
   page: number;
-}
+  brand: string;
+  price: number | null;
+  minMileage: number | null;
+  maxMileage: number | null;
+};
 
 axios.defaults.baseURL = 'https://car-rental-api.goit.study';
 
-export const getCars = async ({ page }: getCarsProps) => {
+export const getCars = async ({
+  page,
+  brand,
+  price,
+  minMileage,
+  maxMileage,
+}: getCarsProps): Promise<CarListResponse> => {
+  const params: Record<string, string | number> = {
+    page,
+    perPage: 12,
+  };
+
+  if (brand) {
+    params.brand = brand;
+  }
+
+  if (price) {
+    params.price = price;
+  }
+
+  if (minMileage) {
+    params.minMileage = minMileage;
+  }
+
+  if (maxMileage) {
+    params.maxMileage = maxMileage;
+  }
+
   const { data } = await axios.get<CarListResponse>('/cars', {
-    params: { page, perPage: 12 },
+    params,
   });
   return data;
 };
 
-export const getSingleCar = async (id: string) => {
+export const getSingleCar = async (id: string): Promise<Car> => {
   const { data } = await axios.get<Car>(`/cars/${id}`);
   return data;
 };
@@ -51,12 +82,12 @@ export const getSingleCar = async (id: string) => {
 type getFiltersResponse = {
   brands: string[];
   price: {
-    min: null;
+    min: number;
     max: number;
   };
 };
 
-export const getFilters = async () => {
+export const getFilters = async (): Promise<getFiltersResponse> => {
   const { data } = await axios.get<getFiltersResponse>('/cars/filters');
   return data;
 };
@@ -74,6 +105,10 @@ export const rentCar = async ({
   email,
   comment,
 }: rentCarData): Promise<{ message: string }> => {
-  const { data } = await axios.post(`/cars/${carId}/booking-requests`, { name, email, comment });
+  const { data } = await axios.post<{ message: string }>(`/cars/${carId}/booking-requests`, {
+    name,
+    email,
+    comment,
+  });
   return data;
 };
