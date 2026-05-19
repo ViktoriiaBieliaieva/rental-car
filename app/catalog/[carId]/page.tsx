@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: 'Rental Car',
       images: [
         {
-          url: '/HeroBanner.jpg',
+          url: `${car.img}`,
           width: 1200,
           height: 630,
           alt: car.description,
