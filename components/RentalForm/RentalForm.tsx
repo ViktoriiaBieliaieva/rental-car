@@ -87,7 +87,7 @@ const RentalForm = ({ carId }: RentalFormProps) => {
             className={css.textarea}
             as="textarea"
             name="comment"
-            placeholder="Comment"
+            placeholder="Comment*"
             aria-label="Comment"
             rows={5}
           />
