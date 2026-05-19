@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: 'Rental Car',
     images: [
       {
-        url: '/public/HeroBanner.jpg',
+        url: '/HeroBanner.jpg',
         width: 1200,
         height: 630,
         alt: 'RentalCar',
