@@ -26,78 +26,7 @@ type PriceOption = {
   label: string;
 };
 
-const customStyles = {
-  dropdownIndicator: base => ({
-    ...base,
-    color: 'var(--main)',
-    '&:hover': {
-      color: 'var(--main)',
-    },
-  }),
-  control: (base, state) => ({
-    ...base,
-    backgroundColor: 'var(--white)',
-    border: 'none',
-    borderColor: state.isFocused ? 'none' : 'none',
-    boxShadow: state.isFocused ? 'none' : 'none',
-    '&:hover': {
-      borderColor: 'none',
-    },
-    borderRadius: '12px',
-    padding: '2px',
-    height: '44px',
-  }),
-
-  valueContainer: base => ({
-    ...base,
-    padding: '0 12px',
-  }),
-
-  input: base => ({
-    ...base,
-    margin: 0,
-    padding: 0,
-    caretColor: 'transparent',
-  }),
-
-  placeholder: base => ({
-    ...base,
-    color: 'var(--main)',
-    fontSize: '16px',
-    fontWeight: '500',
-    lineHeight: '1.25',
-  }),
-
-  menu: base => ({
-    ...base,
-    borderRadius: '12px',
-    marginTop: '4px',
-    overflow: 'hidden',
-    boxShadow: '0 4px 36px 0 rgba(0, 0, 0, 0.02)',
-    padding: '12px 18px',
-  }),
-
-  menuList: base => ({
-    ...base,
-    padding: '0',
-    '::-webkit-scrollbar': {
-      width: '8px',
-    },
-    '::-webkit-scrollbar-thumb': {
-      background: 'var(--gray-light)',
-      borderRadius: '10px',
-      height: '128px',
-    },
-  }),
-
-  option: (base, state) => ({
-    ...base,
-    backgroundColor: 'var(--white)',
-    color: state.isFocused ? 'var(--main)' : state.isSelected ? 'var(--main)' : 'var(--gray)',
-    cursor: 'pointer',
-    padding: '4px 0',
-  }),
-};
+// const customStyles = ;
 
 const FilterForm = ({ onSubmit, onClear }: FilterFormProps) => {
   const [brand, setBrand] = useState('');
@@ -147,7 +76,82 @@ const FilterForm = ({ onSubmit, onClear }: FilterFormProps) => {
           components={{
             IndicatorSeparator: () => null,
           }}
-          styles={customStyles}
+          styles={{
+            dropdownIndicator: base => ({
+              ...base,
+              color: 'var(--main)',
+              '&:hover': {
+                color: 'var(--main)',
+              },
+            }),
+            control: (base, state) => ({
+              ...base,
+              backgroundColor: 'var(--white)',
+              border: 'none',
+              borderColor: state.isFocused ? 'none' : 'none',
+              boxShadow: state.isFocused ? 'none' : 'none',
+              '&:hover': {
+                borderColor: 'none',
+              },
+              borderRadius: '12px',
+              padding: '2px',
+              height: '44px',
+            }),
+
+            valueContainer: base => ({
+              ...base,
+              padding: '0 12px',
+            }),
+
+            input: base => ({
+              ...base,
+              margin: 0,
+              padding: 0,
+              caretColor: 'transparent',
+            }),
+
+            placeholder: base => ({
+              ...base,
+              color: 'var(--main)',
+              fontSize: '16px',
+              fontWeight: '500',
+              lineHeight: '1.25',
+            }),
+
+            menu: base => ({
+              ...base,
+              borderRadius: '12px',
+              marginTop: '4px',
+              overflow: 'hidden',
+              boxShadow: '0 4px 36px 0 rgba(0, 0, 0, 0.02)',
+              padding: '12px 18px',
+            }),
+
+            menuList: base => ({
+              ...base,
+              padding: '0',
+              '::-webkit-scrollbar': {
+                width: '8px',
+              },
+              '::-webkit-scrollbar-thumb': {
+                background: 'var(--gray-light)',
+                borderRadius: '10px',
+                height: '128px',
+              },
+            }),
+
+            option: (base, state) => ({
+              ...base,
+              backgroundColor: 'var(--white)',
+              color: state.isFocused
+                ? 'var(--main)'
+                : state.isSelected
+                  ? 'var(--main)'
+                  : 'var(--gray)',
+              cursor: 'pointer',
+              padding: '4px 0',
+            }),
+          }}
           inputId={`${id}-brand`}
           placeholder="Choose a brand"
           options={brandOptions}
@@ -164,7 +168,82 @@ const FilterForm = ({ onSubmit, onClear }: FilterFormProps) => {
           components={{
             IndicatorSeparator: () => null,
           }}
-          styles={customStyles}
+          styles={{
+            dropdownIndicator: base => ({
+              ...base,
+              color: 'var(--main)',
+              '&:hover': {
+                color: 'var(--main)',
+              },
+            }),
+            control: (base, state) => ({
+              ...base,
+              backgroundColor: 'var(--white)',
+              border: 'none',
+              borderColor: state.isFocused ? 'none' : 'none',
+              boxShadow: state.isFocused ? 'none' : 'none',
+              '&:hover': {
+                borderColor: 'none',
+              },
+              borderRadius: '12px',
+              padding: '2px',
+              height: '44px',
+            }),
+
+            valueContainer: base => ({
+              ...base,
+              padding: '0 12px',
+            }),
+
+            input: base => ({
+              ...base,
+              margin: 0,
+              padding: 0,
+              caretColor: 'transparent',
+            }),
+
+            placeholder: base => ({
+              ...base,
+              color: 'var(--main)',
+              fontSize: '16px',
+              fontWeight: '500',
+              lineHeight: '1.25',
+            }),
+
+            menu: base => ({
+              ...base,
+              borderRadius: '12px',
+              marginTop: '4px',
+              overflow: 'hidden',
+              boxShadow: '0 4px 36px 0 rgba(0, 0, 0, 0.02)',
+              padding: '12px 18px',
+            }),
+
+            menuList: base => ({
+              ...base,
+              padding: '0',
+              '::-webkit-scrollbar': {
+                width: '8px',
+              },
+              '::-webkit-scrollbar-thumb': {
+                background: 'var(--gray-light)',
+                borderRadius: '10px',
+                height: '128px',
+              },
+            }),
+
+            option: (base, state) => ({
+              ...base,
+              backgroundColor: 'var(--white)',
+              color: state.isFocused
+                ? 'var(--main)'
+                : state.isSelected
+                  ? 'var(--main)'
+                  : 'var(--gray)',
+              cursor: 'pointer',
+              padding: '4px 0',
+            }),
+          }}
           inputId={`${id}-price`}
           placeholder="Choose a price"
           options={priceOptions}

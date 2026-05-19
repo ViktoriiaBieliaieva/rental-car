@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-type Car = {
+export type Car = {
   id: string;
   year: number;
   brand: string;
