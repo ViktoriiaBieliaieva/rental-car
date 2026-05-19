@@ -1,5 +1,26 @@
+import { Metadata } from 'next';
 import css from './page.module.css';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'RentalCar',
+  description: 'Find reliable and budget-friendly rental cars for any journey.',
+  openGraph: {
+    title: 'RentalCar',
+    description: 'Find reliable and budget-friendly rental cars for any journey.',
+    url: 'https://rental-car-seven-lemon.vercel.app/',
+    siteName: 'Rental Car',
+    images: [
+      {
+        url: '/public/HeroBanner.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'RentalCar',
+      },
+    ],
+    type: 'article',
+  },
+};
 
 const Home = () => {
   return (

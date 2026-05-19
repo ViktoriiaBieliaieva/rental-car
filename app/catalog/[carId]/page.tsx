@@ -7,6 +7,35 @@ import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { BsCalendar2Week } from 'react-icons/bs';
 import { BsCarFront } from 'react-icons/bs';
 import { RiGasStationLine } from 'react-icons/ri';
+import { Metadata } from 'next';
+
+type Props = {
+  params: Promise<{ carId: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { carId } = await params;
+  const car = await getSingleCar(carId);
+  return {
+    title: `${car.brand} ${car.model}`,
+    description: car.description.slice(0, 30),
+    openGraph: {
+      title: `${car.brand} ${car.model}`,
+      description: car.description.slice(0, 30),
+      url: `https://rental-car-seven-lemon.vercel.app/cars/${carId}`,
+      siteName: 'Rental Car',
+      images: [
+        {
+          url: '/public/HeroBanner.jpg',
+          width: 1200,
+          height: 630,
+          alt: car.description,
+        },
+      ],
+      type: 'article',
+    },
+  };
+}
 
 type CarDetailsClientProps = {
   params: Promise<{
