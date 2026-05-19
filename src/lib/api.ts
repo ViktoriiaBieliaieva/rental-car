@@ -96,7 +96,7 @@ type rentCarData = {
   carId: string;
   name: string;
   email: string;
-  comment: string;
+  comment?: string;
 };
 
 export const rentCar = async ({
